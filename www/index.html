@@ -1,0 +1,183 @@
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Macro Tracker</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark1">
+    <div class="container">
+        <div class="statusContainer">
+            <div class="status py-2 px-1 row dark3">
+                <div class="col-12">
+                    <div class="row justify-content-between py-1 px-3">
+                        <small>هدف</small>
+                        <small>مصرف شده</small>
+                    </div>
+                </div>
+                <div class="myProgress col-12" id="proteinProgress">
+                    <div class="progressText">
+                        <span class="col-4 text-left">- <small>گرم</small></span>
+                        <span class="col-4 text-center">پروتئین</span>
+                        <span class="col-4 text-right">- <small>گرم</small></span>
+                    </div>
+                    <div class="progressTarget dark6">
+                        <div class="progressPass dark4" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="myProgress col-12" id="carbsProgress">
+                    <div class="progressText">
+                        <span class="col-4 text-left">- <small>گرم</small></span>
+                        <span class="col-4 text-center">کربوهیدرات</span>
+                        <span class="col-4 text-right">- <small>گرم</small></span>
+                    </div>
+                    <div class="progressTarget dark6">
+                        <div class="progressPass dark4" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="myProgress col-12" id="fatProgress">
+                    <div class="progressText">
+                        <span class="col-4 text-left">- <small>گرم</small></span>
+                        <span class="col-4 text-center">چربی</span>
+                        <span class="col-4 text-right">- <small>گرم</small></span>
+                    </div>
+                    <div class="progressTarget dark6">
+                        <div class="progressPass dark4" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="usedFood">
+        </div>
+        <div class="options justify-content-around">
+            <button onclick="openSetting()" class="dark3">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"/>
+                    <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"/>
+                </svg>
+            </button>
+            <button onclick="addFood()" class="dark3">
+                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+            </button>
+            <button onclick="resetToggle()" class="dark3">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-repeat" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="resetAlert my-3" style="display: none;">
+            <div class="alertContainer p-3 dark3">
+                <div class="alertEdge dark3"></div>
+                <div class="alertMessage">
+                    <p class="text-center">آیا برای حذف داده ها مطمئن هستید؟</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-dark btn-block dark4 mx-3 my-0" onclick="resetConfirm()">بله</a>
+                        <a href="#" class="btn btn-dark btn-block dark4 mx-3 my-0" onclick="resetToggle()">خیر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addFoodForm" style="display: none;">
+            <form action="/" class="dark3">
+                <div class="row">
+                    <div class="foodDetails rounded w-100">
+                        <div class="row">
+                            <div class="col-md-4 px-4 col-right" id="calculatorProtein">
+                                <div class="d-flex justify-content-between">
+                                    <span>پروتئین</span>
+                                    <span>- گرم</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 px-4" id="calculatorCarbs">
+                                <div class="d-flex justify-content-between">
+                                    <span>کربوهیدرات</span>
+                                    <span>- گرم</span>
+                                </div>
+                                </div>
+                            <div class="col-md-4 px-4 col-left" id="calculatorFat">
+                                <div class="d-flex justify-content-between">
+                                    <span>چربی</span>
+                                    <span>- گرم</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="row">
+                    <label class="col-sm-6" for="food">ماده غذایی</label>
+                    <select class="col-sm-6" name="food" id="food"></select>
+                </div>
+                <div class="row">
+                    <label class="col-sm-6" for="foodAmount">میزان <small>(گرم)</small></label>
+                    <input class="col-sm-6" type="number" name="foodAmount" id="foodAmount" placeholder="میزان ماده غذایی به گرم">
+                </div>
+                <div class="d-flex justify-content-between mt-4 py-3">
+                    <a href="#" onclick="addFoodSubmit(true)" class="btn btn-dark  dark4 btn-block mr-2 my-0">تایید</a>
+                    <a href="#" onclick="addFoodCancell()" class="btn btn-dark  dark4 btn-block mr-2 my-0">انصراف</a>
+                </div>
+            </form>
+        </div>
+        <div class="setting my-3 container dark3" style="display: none;">
+            <div class="row my-3">
+                <div class="col-6">پوسته</div>
+                <div class="col-6">
+                    <div class="themeToggle dark4" onclick="toggleTheme()">
+                        <div class="themeToggler darkToggle dark1">
+                            <svg width="100%" height="100%" viewBox="0 0 16 16" class="p-1 d-flex align-item-center justify-content-center bi bi-brightness-low-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                                <path d="M8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                              </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">هدف پروتئین <small>(گرم)</small></div>
+                <div class="col-sm-6">
+                    <input class="p-0 w-100" type="number" name="pTarget" id="pTarget" placeholder="میزان پروتئین به گرم">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">هدف کربوهیدرات <small>(گرم)</small></div>
+                <div class="col-sm-6">
+                    <input class="w-100" type="number" name="cTarget" id="cTarget" placeholder="میزان کربوهیدرات به گرم">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">هدف چربی <small>(گرم)</small></div>
+                <div class="col-sm-6">
+                    <input class="w-100" type="number" name="fTarget" id="fTarget" placeholder="میزان چربی به گرم">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">وزن <small>(کیلوگرم)</small></div>
+                <div class="col-sm-6">
+                    <input class="w-100" type="number" name="wTarget" id="wTarget" placeholder="وزن به کیلوگرم">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">قد <small>(سانتی متر)</small></div>
+                <div class="col-sm-6">
+                    <input class="w-100" type="number" name="hTarget" id="hTarget" placeholder="قد به سانتی متر">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">تعداد وعده</div>
+                <div class="col-sm-6">
+                    <input class="w-100" type="number" name="mTarget" id="mTarget" placeholder="تعداد وعده های غذایی">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <div class="btn btn-dark  dark4 btn-block ml-2 my-0" onclick="saveSetting()">ذخیره</div>
+                <div class="btn btn-dark  dark4 btn-block mr-2 my-0" onclick="closeSetting()">انصراف</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="jquery.min.js"></script>
+<script src="scripts.js"></script>
+</html>

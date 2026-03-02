@@ -1,0 +1,279 @@
+@font-face {
+    font-family: iransans;
+    src: url(IRANSansWeb.ttf);
+}
+body{
+    font-family: iransans;
+    margin: 0px;
+    direction: rtl;
+    text-align: right;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-touch-select: none;
+    -ms-user-select: none;
+}
+.status{
+    margin: 15px 0px;
+    border-radius: 5px;
+}
+.myProgress{
+    padding: 5px 2%;
+    margin: 0px;
+    width: 96%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.bar{
+    width: 100%;
+}
+.progressTarget{
+    direction: ltr;
+    width: 100%;
+    height: 10px;
+    border-radius: 3px;
+}
+.progressPass{
+    direction: ltr;
+    width: 0%;
+    height: 10px;
+    border-radius: 3px;
+    transition: all 1s !important;
+}
+.progressText{
+    flex-direction: row-reverse;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+small{
+    font-size: x-small;
+}
+.options, .options button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.options button{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    font-size: xx-large;
+    border:none;
+    outline: none;
+    padding: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-touch-select: none;
+    -ms-user-select: none;
+    transition: all 0.1s;
+}
+.dark1 .options button{
+    box-shadow: 0px 0px 3px #555;
+}
+.light1 .options button{
+    box-shadow: 0px 0px 3px #c2cfc2;
+}
+.dark1 .options button:active{
+    background-color: #222;
+    color: #aaa;
+    box-shadow: none;
+    transition: all 0.1s;
+}
+.light1 .options button:active{
+    background-color: #e0e6dc;
+    color: #aaa;
+    box-shadow: none;
+    transition: all 0.1s;
+}
+.foodBase{
+    margin: 15px 0px;
+    z-index: 10;
+}
+.food{
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+.foodDetails{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-radius: 0px 0px 5px 5px;
+    top: -5px;
+    z-index: 9;
+}
+.addFoodForm{
+    width: 100%;
+}
+.addFoodForm form{
+    border-radius: 5px;
+    padding: 10px 10px 0px 10px;
+}
+.addFoodForm .row{
+    margin: 0px;
+    padding: 10px 0px;
+}
+.dark1 input,.dark1 select{
+    outline: none;
+    background:none;
+    border: none;
+    border-bottom: solid thin #fff;
+}
+.light1 input,.light1 select{
+    outline: none;
+    background:none;
+    border: none;
+    border-bottom: solid thin #121212;
+}
+.options button:active > svg {
+    width: 0.9em;
+    height: 0.9em;
+    transition: all 0.1s;
+}
+.alertContainer{
+    border-radius: 5px;
+}
+.alertEdge {
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotateZ(45deg);
+    position: relative;
+    top: -1.5rem;
+    left: -83%;
+    display: inline-block;
+    border-radius: 5px 0px 0px 0px;
+}
+.alertMessage{
+    position: relative;
+    top: -0.7rem;
+}
+.setting{
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: right;
+}
+.themeToggle{
+    width: 72px;
+    height: 40px;
+    border-radius: 20px;
+    margin: auto;
+}
+.dark1 .themeToggle{
+    box-shadow: 0px 0px 10px #121212;
+}
+.light1 .themeToggle{
+    box-shadow: 0px 0px 10px #fff;
+}
+.dark1 .themeToggler{
+    height: 36px;
+    width: 36px;
+    box-shadow: 0px 0px 5px #fff;
+    border-radius: 18px;
+    position: relative;
+    top: 2px;
+    right: 2px;
+    transition: all 1s;
+}
+.light1 .themeToggler{
+    height: 36px;
+    width: 36px;
+    box-shadow: 0px 0px 5px #121212;
+    border-radius: 18px;
+    position: relative;
+    top: 2px;
+    right: 2px;
+    transition: all 1s;
+}
+.setting .col-6,.setting .col-sm-6{
+    display: flex;
+    align-items: center;
+}
+.dark1 input, .dark1 option,.dark1 select,.dark1 svg{
+    color: #fff !important;
+    transition: background-color,color 1s;
+}
+.dark1{
+    color: #fff !important;
+    background-color: #121212;
+    transition: background-color,color 1s;
+}
+.dark2{
+    background-color: #222;
+    transition: background-color,color 1s;
+}
+.dark3{
+    background-color: #333;
+    transition: background-color,color 1s;
+}
+.dark4{
+    background-color: #555;
+    transition: background-color,color 1s;
+}
+.dark5{
+    background-color: #777;
+    transition: background-color,color 1s;
+}
+.dark6{
+    background-color: #999;
+    transition: background-color,color 1s;
+}
+.dark7{
+    background-color: #fff;
+    transition: background-color,color 1s;
+}
+.light1 input, .light1 option,.light1 svg{
+    color: #121212 !important;
+    transition: color 1s;
+}
+.light1{
+    color: #121212 !important;
+    background-color: ##f1f5e9;
+    transition: background-color,color 1s;
+}
+.light2{
+    background-color: #e0e6dc;
+    transition: background-color,color 1s;
+}
+.light3{
+    background-color: #dde1d5;
+    transition: background-color,color 1s;
+}
+.light4{
+    background-color: #c2cfc2;
+    transition: background-color,color 1s;
+}
+.light5{
+    background-color: aebdb1;
+    transition: background-color,color 1s;
+}
+.light6{
+    background-color: #9ab1ab;
+    transition: background-color,color 1s;
+}
+.light7{
+    background-color: #121212;
+    transition: background-color,color 1s;
+}
+@media only screen and (min-width:768px){
+    .setting{
+        text-align: center;
+    }
+    .dark1 .foodDetails .col-left{
+        border-right: #999 solid thin;
+    }
+    .light1 .foodDetails .col-left{
+        border-right: #999 solid thin;
+    }
+    .dark1 .foodDetails .col-right{
+        border-left: #9ab1ab solid thin;
+    }
+    .light1 .foodDetails .col-right{
+        border-left: #9ab1ab solid thin;
+    }
+}
