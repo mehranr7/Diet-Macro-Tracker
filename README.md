@@ -29,3 +29,8 @@ A lightweight macro tracker (Protein / Carbs / Fat) built with **Apache Cordova*
 [
   { "id": "24", "name": "Chicken Breast", "protein": 30.0, "carbs": 0.0, "fat": 3.5 }
 ]
+```
+
+## User Interface
+<img width="650" height="511" alt="diet-app" src="https://github.com/user-attachments/assets/1f807fc7-37ea-4166-9154-904d29a660ff" />
+
